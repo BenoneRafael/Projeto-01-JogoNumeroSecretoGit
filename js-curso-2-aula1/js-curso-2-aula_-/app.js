@@ -1,9 +1,10 @@
 
 let listaDeNumerosSorteados = [];
-let nuu = 5;
+let numeroMaior = parseInt(Math.random() * 1000 ) + 1;
+let nuu = numeroMaior;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
-let maxTentativas = 3;
+let maxTentativas = 10;
 let botaoReiniciar = document.querySelector('.container__botao'); 
 let listaNumerosTentados = [];
 
@@ -105,12 +106,15 @@ function limparCampo(){
  function novoJogo(){
 
     tentativas = 1;
+    numeroMaior = parseInt(Math.random() * 1000 ) + 1;
+    nuu = numeroMaior;
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo()
     document.querySelector('.container__botao').removeAttribute('disabled');
     document.getElementById('reiniciar').setAttribute('disabled', 'true')
     exibirMensagemInicial()
     listaNumerosTentados = [];
+ 
  }
 
 function exibirMensagemInicial(){
